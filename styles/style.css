@@ -1,19 +1,61 @@
 @import 'meyer-reset.css';
 
-img {
-    display: flexa;
+.image {
+    display: flex;
+    width: 45%;
+    height: 100%;
 }
   
-main {
+label {
     display: flex;
+}
+
+.form-wrapper {
+    width: 100%;
+}
+
+form {
+    background-color: rgb(255, 255, 255);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 20px #888, 0px -5px 20px #888;
+
+
+    border-style: solid;
+    border-color: black;
+    border-width: fill;
+    padding: 20px;
+}
+
+input {
+    margin-right: 100px;
+}
+
+main {
+    background-color: rgb(243, 243, 243);
+
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+
     border-style: solid;
     border-color: black;
     border-width: 1px;
+
 }
   
 body {
     display: flex;
+    flex-direction: row;
     margin: 0 auto;
     justify-content: center;
+    height: 100vh;
+}
+
+p {
+    display: flex;
 }
