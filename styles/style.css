@@ -1,8 +1,13 @@
 @import 'meyer-reset.css';
 
+html {
+    height: 100vh;
+    background-color: rgb(29, 29, 29);
+}
+
 .image {
     display: flex;
-    width: 45%;
+    width: 40%;
     height: 100%;
 }
   
@@ -10,34 +15,39 @@ label {
     display: flex;
 }
 
-.form-wrapper {
-    width: 100%;
-}
-
 form {
     background-color: rgb(255, 255, 255);
-    
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 5px 20px #888, 0px -5px 20px #888;
-
-
     border-style: solid;
     border-color: black;
     border-width: fill;
     padding: 20px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.7rem;
+    overflow:hidden; 
+}
+
+tr {
+    margin: 100px;
 }
 
 input {
+    margin-bottom: 20px;
     margin-right: 100px;
+    width: 15rem;
+    height: 20px;
+    font-style: inherit;
 }
 
 main {
     background-color: rgb(243, 243, 243);
 
-    flex-grow: 1;
     display: flex;
+    flex-grow: 1;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -45,7 +55,6 @@ main {
     border-style: solid;
     border-color: black;
     border-width: 1px;
-
 }
   
 body {
@@ -53,9 +62,32 @@ body {
     flex-direction: row;
     margin: 0 auto;
     justify-content: center;
-    height: 100vh;
+
+    height: 100%;
+    width: 80%;
+
 }
 
-p {
+.top {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+
+.form-wrapper {
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+
 }
