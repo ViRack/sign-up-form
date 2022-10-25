@@ -1,93 +1,200 @@
 @import 'meyer-reset.css';
-
-html {
-    height: 100vh;
-    background-color: rgb(29, 29, 29);
+@font-face {
+    font-family: NorseBold;
+    src: url("../fonts/Norse-Bold.otf");
 }
 
-.image {
-    display: flex;
-    width: 40%;
-    height: 100%;
-}
-  
-label {
-    display: flex;
+
+:root {
+    margin: none;
+    padding: none;
+    
+    --focus-color:rgb(158, 206, 155);
+    --unfocused-color: rgb(19, 48, 32);
+    --bordered-width: 5px;
+    --font-size: 5rem;
 }
 
-form {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 5px 20px #888, 0px -5px 20px #888;
-    border-style: solid;
-    border-color: black;
-    border-width: fill;
-    padding: 20px;
-    height: 100%;
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr;
+    grid-template-areas: "image", "main";
+    min-width: 320px;
+}
+
+.image-wrapper {
+    grid-area: "image";
     width: 100%;
-    font-size: 1.7rem;
-    overflow:hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-tr {
-    margin: 100px;
+img {
+    width: 100%;
 }
 
-input {
-    margin-bottom: 20px;
-    margin-right: 100px;
-    width: 15rem;
-    height: 20px;
-    font-style: inherit;
+#logo {
+    position: absolute;
+    float: left;
+    height: auto;    
+}
+
+#introduction {
+    display: none;
+    font-family: NorseBold;
+
+    position: absolute;
+    color: white;
 }
 
 main {
-    background-color: rgb(243, 243, 243);
-
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-}
-  
-body {
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    justify-content: center;
-
-    height: 100%;
-    width: 80%;
-
-}
+    grid-area: "main";
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr, .2fr, .2fr;
+    grid-template-areas: "top",
+                            "form",
+                            "bottom";
+    
+    }
 
 .top {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30%;
+    
+    background-color: rgb(255, 255, 255);
 }
 
-.form-wrapper {
-    width: 100%;
-    background-color: red;
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr, .2fr, .2fr, .2fr, .2fr;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.entry {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35%;
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    min-height: 5.5rem;
+    min-width: 50rem;
+    margin: 3rem;
+    border-radius: 1.3rem;
+    border-style: solid;
+    border-color: var(--unfocused-color);
+    border-width: var(--bordered-width);
+    font-size: var(--font-size)
+}
+
+input:focus {
+    border-style: solid;
+    border-color: var(--focus-color);
+    border-width: 5px;
 }
 
 .bottom {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30%;
+    
+    margin-top: 3rem;
+    background-color: rgb(255, 255, 255);
 
+}
+
+button {
+    min-height: 7.5rem;
+    min-width: 50rem;
+    border-width: var(--bordered-width);
+    
+    background-color: var(--unfocused-color);
+    border-radius: 1rem;
+
+    font-size: var(--font-size);
+    font-weight: bold;
+    color: white;
+}
+
+button:focus {
+    background-color: var(--focus-color);
+}
+
+p {
+    display: block;
+    margin-left:6rem;
+    margin-right: 6rem;
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    
+    font-size: var(--font-size);
+    line-height: 8rem;
+
+}
+
+@media (min-width: 1000px) {
+
+    body {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "image", "main";
+        min-width: 320px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 1fr, 1fr;
+        grid-template-areas: "top",
+                                "form",
+                                "bottom";
+        
+    }
+
+    #logo {
+        display: none;
+    }
+
+    form {
+        max-width: 1000px;
+        grid-template-columns: 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr, 1fr;
+        grid-template-areas: "firstName lastName",
+                                "email phone",
+                                "password confirmPassword";
+    }
+
+    #first-name {
+        grid-area: "firstName";
+    }
+
+    #last-name {
+        grid-area: "lastName";
+    }
+
+    #email {
+        grid-area: "phone";
+    }
+
+    #password {
+        grid-area: password        
+    }
+
+    #password-confirmation {
+        grid-area: "confirmPassword";
+    }
 }
