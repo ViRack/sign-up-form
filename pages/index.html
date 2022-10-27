@@ -8,48 +8,56 @@
 </head>
 <body>
     <div class="image-wrapper">
-        <p id="introduction">Odin</p>
-        <img id="logo" src="../images/odin-lined.png">
-        <img src="../images/plant.avif"> 
+        <div class="logo-introduction">
+            <img id="logo" src="../images/odin-lined.png">
+            <p id="introduction">Odin</p>
+        </div>
+        <img id="thumbnail" src="../images/plant.avif"> 
     </div>
 
     <main>
         <section class="top">
-            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.<br><br>Sign up now to get started.    <br>You know you want to</p>
+            <p id="pledge">This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.<br><br>Sign up <i>now</i> to get started.<br>You <i>know</i> you want to</p>
         </section>
-        <form>
-            <div class="entry" id="first-name">
-                <!-- <label for="first-name">First Name</label> -->
-                <input type="text" name="user-first-name" placeholder="First Name">    
-            </div>
+        <div class="form-container">
+            <p class="form-initiator">Let's do this!</p>
 
-            <div class="entry" id="last-name">
-                <!-- <label for="lastname">First Name</label> -->
-                <input type="text" name="user-last-name" placeholder="Last Name">    
-            </div>
+            <form>
+                <div class="entry" id="first-name">
+                    <!-- <label for="first-name">First Name</label> -->
+                    <input type="text" name="user-first-name" placeholder="First Name">    
+                </div>
 
-            <div class="entry" id="email">
-                <!-- <label for="email">Email</label> -->
-                <input type="email" name="user-email" placeholder="Email">    
-            </div>
+                <div class="entry" id="last-name">
+                    <!-- <label for="lastname">First Name</label> -->
+                    <input type="text" name="user-last-name" placeholder="Last Name">    
+                </div>
 
-            <div class="entry" id="password">
-                <!-- <label for="password">Password</label> -->
-                <input type="password" name="user-password" placeholder="Password">
-            </div>
+                <div class="entry" id="email">
+                    <!-- <label for="email">Email</label> -->
+                    <input type="email" name="user-email" placeholder="Email">    
+                </div>
 
-            <div class="entry" id="phone">
-                <!-- <label for="password">Password</label> -->
-                <input type="tel" name="user-phone-number" placeholder="Phone Number">
-            </div>
+                <div class="entry" id="phone">
+                    <!-- <label for="password">Password</label> -->
+                    <input type="tel" name="user-phone-number" placeholder="Phone Number">
+                </div>
 
-            <div class="entry" id="password-confirmation">
-                <!-- <label for="password-confirmation">Confirm Password</label> -->
-                <input type="password" name="user-password-confirmation" placeholder="Confirm Password">    
-            </div>
-        </form>
+                <div class="entry" id="password">
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" name="user-password" placeholder="Password">
+                </div>
+
+                <div class="entry" id="password-confirmation">
+                    <!-- <label for="password-confirmation">Confirm Password</label> -->
+                    <input type="password" name="user-password-confirmation" placeholder="Confirm Password">    
+                </div>
+            </form>
+        </div>
         <section class="bottom">
-            <button type="button">Create Account</button>
+            <div class="entry" id="submit-button">
+                <button id="button" type="button">Create Account</button>
+            </div>
             <p id="login">Already have an account? Log in</p>
         </section>
     </main>

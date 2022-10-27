@@ -6,8 +6,7 @@
 
 
 :root {
-    margin: none;
-    padding: none;
+
     
     --focus-color:rgb(158, 206, 155);
     --unfocused-color: rgb(19, 48, 32);
@@ -15,12 +14,13 @@
     --font-size: 5rem;
 }
 
+
+
 body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr, 1fr;
     grid-template-areas: "image", "main";
-    min-width: 320px;
 }
 
 .image-wrapper {
@@ -31,13 +31,12 @@ body {
     align-items: center;
 }
 
-img {
+#thumbnail {
     width: 100%;
 }
 
 #logo {
-    position: absolute;
-    float: left;
+
     height: auto;    
 }
 
@@ -45,7 +44,6 @@ img {
     display: none;
     font-family: NorseBold;
 
-    position: absolute;
     color: white;
 }
 
@@ -67,15 +65,55 @@ main {
     justify-content: center;
     align-items: center;
     
-    background-color: rgb(255, 255, 255);
+}
+
+#pledge {
+    display: block;
+    margin-left:6rem;
+    margin-right: 6rem;
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    
+    font-size: var(--font-size);
+    line-height: 8rem;
+}
+
+#login {
+    display: block;
+    margin-left:6rem;
+    margin-right: 6rem;
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    
+    font-size: var(--font-size);
+    line-height: 8rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-initiator {
+    font-size: var(--font-size);
 }
 
 form {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: .2fr, .2fr, .2fr, .2fr, .2fr;
-
-    background-color: rgb(255, 255, 255);
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+    grid-template-areas: "firstName"
+                            "lastName"
+                            "email"
+                            "phone"
+                            "password"
+                            "confirmPassword"
+                            "button";
 }
 
 .entry {
@@ -90,13 +128,18 @@ label {
 
 input {
     display: block;
+    
     min-height: 5.5rem;
     min-width: 50rem;
+    
     margin: 3rem;
+    padding: 1rem;
+
     border-radius: 1.3rem;
     border-style: solid;
     border-color: var(--unfocused-color);
     border-width: var(--bordered-width);
+
     font-size: var(--font-size)
 }
 
@@ -113,7 +156,6 @@ input:focus {
     align-items: center;
     
     margin-top: 3rem;
-    background-color: rgb(255, 255, 255);
 
 }
 
@@ -125,6 +167,8 @@ button {
     background-color: var(--unfocused-color);
     border-radius: 1rem;
 
+    margin-top: 3rem;
+
     font-size: var(--font-size);
     font-weight: bold;
     color: white;
@@ -134,67 +178,171 @@ button:focus {
     background-color: var(--focus-color);
 }
 
-p {
-    display: block;
-    margin-left:6rem;
-    margin-right: 6rem;
+#button {
+    grid-area: button;
+}
 
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    
-    font-size: var(--font-size);
-    line-height: 8rem;
+#first-name {
+    grid-area: firstName;
+}
 
+#last-name {
+    grid-area: lastName;
+}
+
+#email {
+    grid-area: email;
+}
+
+#phone {
+    grid-area: phone;
+}
+
+#password {
+    grid-area: password;        
+}
+
+#password-confirmation {
+    grid-area: confirmPassword;
 }
 
 @media (min-width: 1000px) {
 
-    body {
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "image", "main";
-        min-width: 320px;
+    html {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(5, 15, 13);
     }
 
-    main {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr, 1fr, 1fr;
-        grid-template-areas: "top",
-                                "form",
-                                "bottom";
-        
+    body {
+        grid-template-areas: "image main";
+        width: 70%;
+        height: 100vh;
+        min-width: 1000px;
+        position: relative;
+    }
+
+    .logo-introduction {
+        position: absolute;
+        display: block;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.597);
+        height: 100px;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    #introduction {
+        display: inline;
     }
 
     #logo {
-        display: none;
+        height: auto;
+        width: 50px;
+    }
+
+    .image-wrapper {
+        grid-area: "image-wrapper";
+        background-color: brown;
+    }
+
+    .image-wrapper {
+        position: relative;
+    }
+
+    #thumbnail {
+        position: absolute;
+        left: 0;
+        height: 100%;
+    }
+
+    main {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        grid-area: "main";
+        background-color: aqua;
+        height: 100%;
+        width:65%;
+    }
+
+    .top {
+        height: auto;
+        width: 100%;
+        background-color: rgb(236, 236, 236);
+
+    }
+
+    #pledge {
+        display: block;
+
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .bottom {
+        height: auto;
+        padding: 0rem;
+
+        margin-top: 0px;
+        background-color: rgb(236, 236, 236);
+
+    }
+    #login {
+        display: block;
+
+        font-size: 1rem;
+        line-height: 1rem;
     }
 
     form {
-        max-width: 1000px;
-        grid-template-columns: 1fr, 1fr;
-        grid-template-rows: 1fr, 1fr, 1fr;
-        grid-template-areas: "firstName lastName",
-                                "email phone",
+        grid-template-areas: "firstName lastName"
+                                "email phone"
                                 "password confirmPassword";
+        grid-gap: 10px;
     }
 
-    #first-name {
-        grid-area: "firstName";
+    .form-container {
+        width: 100%;
+        overflow: hidden;
+        border-style: solid;
+        border-right-style: none;
+        border-width: 1px;
+        border-color: rgba(0, 0, 0, .1);
+        background-color: rgb(255, 255, 255);
     }
 
-    #last-name {
-        grid-area: "lastName";
+    .form-initiator {
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
 
-    #email {
-        grid-area: "phone";
+    input {
+        min-height: 1px;
+        min-width: 1px;
+        
+        max-height: 1000px;
+        max-width: 1000px;
+
+        margin: 10px;
+        padding: 5px;
+        font-size: 1rem;
+        border-width: 1px;
+        border-radius: 5px;
     }
 
-    #password {
-        grid-area: password        
+    button {
+        min-height: 2rem;
+        min-width: 6rem;
+        border-width: 1px;
+        
+        background-color: var(--unfocused-color);
+        border-radius: 1rem;
+    
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
     }
 
-    #password-confirmation {
-        grid-area: "confirmPassword";
-    }
 }
