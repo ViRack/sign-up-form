@@ -35,12 +35,18 @@ body {
     width: 100%;
 }
 
+
+
+.logo-introduction {
+    display: none;
+}
+
 #logo {
 
     height: auto;    
 }
 
-#introduction {
+#introduction{
     display: none;
     font-family: NorseBold;
 
@@ -77,6 +83,8 @@ main {
     
     font-size: var(--font-size);
     line-height: 8rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 #login {
@@ -89,6 +97,8 @@ main {
     
     font-size: var(--font-size);
     line-height: 8rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 .form-container {
@@ -101,6 +111,8 @@ main {
 
 .form-initiator {
     font-size: var(--font-size);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 form {
@@ -127,6 +139,8 @@ label {
 }
 
 input {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
     display: block;
     
     min-height: 5.5rem;
@@ -222,6 +236,12 @@ button:focus {
         position: relative;
     }
 
+    #source {
+        color: white;
+        margin-top: 10px;
+        font-family: NorseBold;
+    }
+
     .logo-introduction {
         position: absolute;
         display: block;
@@ -271,20 +291,22 @@ button:focus {
         height: auto;
         width: 100%;
         background-color: rgb(236, 236, 236);
-
+        justify-content: end;
     }
 
     #pledge {
         display: block;
 
-        font-size: 1rem;
-        line-height: 1rem;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
 
     .bottom {
         height: auto;
         padding: 0rem;
-
+        justify-content: start;
         margin-top: 0px;
         background-color: rgb(236, 236, 236);
 
@@ -292,14 +314,24 @@ button:focus {
     #login {
         display: block;
 
-        font-size: 1rem;
-        line-height: 1rem;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     form {
         grid-template-areas: "firstName lastName"
                                 "email phone"
-                                "password confirmPassword";
+                                "password confirmPassword"
+                                "button button";
         grid-gap: 10px;
     }
 
@@ -336,11 +368,11 @@ button:focus {
         min-height: 2rem;
         min-width: 6rem;
         border-width: 1px;
-        
+        padding: 10px;
         background-color: var(--unfocused-color);
         border-radius: 1rem;
     
-        font-size: 10px;
+        font-size: 1.5rem;
         font-weight: bold;
         color: white;
     }

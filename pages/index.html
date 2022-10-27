@@ -11,6 +11,7 @@
         <div class="logo-introduction">
             <img id="logo" src="../images/odin-lined.png">
             <p id="introduction">Odin</p>
+            <p id="source">Photo by Halie West on Unsplash</p>
         </div>
         <img id="thumbnail" src="../images/plant.avif"> 
     </div>
@@ -22,7 +23,7 @@
         <div class="form-container">
             <p class="form-initiator">Let's do this!</p>
 
-            <form>
+            <form action="" method="post">
                 <div class="entry" id="first-name">
                     <!-- <label for="first-name">First Name</label> -->
                     <input type="text" name="user-first-name" placeholder="First Name">    
@@ -52,12 +53,13 @@
                     <!-- <label for="password-confirmation">Confirm Password</label> -->
                     <input type="password" name="user-password-confirmation" placeholder="Confirm Password">    
                 </div>
+
+                <div class="button" id="submit-button">
+                    <button id="button" type="submit">Create Account</button>
+                </div>
             </form>
         </div>
         <section class="bottom">
-            <div class="entry" id="submit-button">
-                <button id="button" type="button">Create Account</button>
-            </div>
             <p id="login">Already have an account? Log in</p>
         </section>
     </main>
